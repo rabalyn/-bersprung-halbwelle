@@ -1,0 +1,11 @@
+.card {
+    margin-top: 1.2em;
+}
+
+#minus {
+    background-color: rgba(255, 99, 132, 0.2);
+}
+
+#plus {
+    background-color: rgba(54, 245, 67, 0.2);
+}

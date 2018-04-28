@@ -2,15 +2,29 @@
 
 <div class="card text-center">
   <div class="card-header">
-     <h1>... die Stimmung kippt! - v0.1</h1>
+     <h1>Halbwellenschwingungsdetektor - v0.1</h1>
   </div>
   <div class="card-body">
     <div class="card-text">
-      CARD TEXT
+      <div class="row">
+        <div id="minus" class="col-2">
+          <button type="button" class="btn btn-danger"><i class="far fa-frown"></i></button>
+        </div>
+        <div class="col-8">
+          <canvas id="scale" width="400" height="300"></canvas>
+        </div>
+        <div id="plus" class="col-2 align-middle">
+          <button type="button" class="btn btn-success"><i class="far fa-smile"></i></button>
+        </div>
+      </div>
     </div>
   </div>
   <div class="card-footer text-muted">
-    CARD FOOT
+    <video id="videoStimmung" width="0" height="0">
+      <source src="vid/stimmung_kippt.mp4" type="video/mp4">
+    </video>
+    <audio id="audioCheer" src="vid/cheer.mp3">
+    </audio>
   </div>
 </div>
 

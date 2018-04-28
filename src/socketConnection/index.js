@@ -16,5 +16,10 @@ module.exports.socketIO = function hobbitIO(http) {
         socket.on('disconnect', () => {
             loginfo('user disconnected')
         })
+
+        socket.on('sync', (data) => {
+            logdebug(data)
+            io.emit('pushSync', data)
+        })
     })
 }
