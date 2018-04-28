@@ -19,9 +19,9 @@ const maxVal = plus + minus
 let playStimmungkippt = false
 let playCheer = false
 
-function playVideo() {
-  const vid = document.getElementById('videoStimmung')
-  vid.play()
+function playAudioStimmung() {
+  const audio = document.getElementById('audioStimmung')
+  audio.play()
 }
 
 function playAudioCheer() {
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if(playStimmungkippt) {
-      playVideo()
+      playAudioStimmung()
     }
   })
 
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     chart.data.datasets[0].data[1] = plus
     chart.update()
     if(playStimmungkippt) {
-      playVideo()
+      playAudioStimmung()
     }
 
     if(playCheer) {
