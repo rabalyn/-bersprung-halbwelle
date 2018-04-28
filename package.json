@@ -1,0 +1,24 @@
+{
+  "name": "stimmung_kippt",
+  "version": "0.1.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "export DEBUG='app:*' ; nodemon --ignore 'node_modules' --exec npm run babel-node -- app.js",
+    "babel-node": "babel-node --ignore='node_modules'"
+  },
+  "author": "@rabalyn",
+  "license": "MIT",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "express-hbs": "^1.0.4",
+    "express-session": "^1.15.6",
+    "handlebars": "^4.0.11",
+    "nodemon": "^1.17.3",
+    "socket.io": "^2.1.0"
+  }
+}
