@@ -122,6 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   socket.on('init', (data) => {
+    data.playStimmungkippt = false
+    data.playCheer = false
     updateState(data, chart)
   })
 
