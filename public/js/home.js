@@ -4,10 +4,6 @@ const loginfo = debug('home:info')
 const logdebug = debug('home:debug')
 const logerror = debug('home:error')
 
-socket.on('connection', () => {
-  logdebug('socket connected')
-})
-
 function POSTsync(data) {
   socket.emit('sync', data)
 }
@@ -27,6 +23,24 @@ function playAudioStimmung() {
 function playAudioCheer() {
   const audio = document.getElementById('audioCheer')
   audio.play()
+}
+
+function updateState(data, chart) {
+  minus = data.minus
+  plus = data.plus
+  playStimmungkippt = data.playStimmungkippt
+  playCheer = data.playCheer
+  
+  chart.data.datasets[0].data[0] = minus
+  chart.data.datasets[0].data[1] = plus
+  chart.update()
+  if(playStimmungkippt) {
+    playAudioStimmung()
+  }
+
+  if(playCheer) {
+    playAudioCheer()
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -103,22 +117,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
+  socket.on('connection', () => {
+    logdebug('socket connected')
+  })
+
+  socket.on('init', (data) => {
+    updateState(data, chart)
+  })
+
   socket.on('pushSync', (data) => {
     logdebug(data)
-    minus = data.minus
-    plus = data.plus
-    playStimmungkippt = data.playStimmungkippt
-    playCheer = data.playCheer
-    
-    chart.data.datasets[0].data[0] = minus
-    chart.data.datasets[0].data[1] = plus
-    chart.update()
-    if(playStimmungkippt) {
-      playAudioStimmung()
-    }
-
-    if(playCheer) {
-      playAudioCheer()
-    }
+    updateState(data, chart)
   })
 })
