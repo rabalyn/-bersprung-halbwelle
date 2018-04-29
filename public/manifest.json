@@ -1,5 +1,10 @@
 {
- "name": "App",
+ "name": "Halbwellendetektor OG2",
+ "short_name": "Welle 2GO",
+ "start_url": "/",
+ "background_color": "#95a2ad",
+ "theme_color": "#f8f9fa",
+ "display": "standalone",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
