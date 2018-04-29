@@ -8,8 +8,8 @@ function POSTsync(data) {
   socket.emit('sync', data)
 }
 
-let plus = 4
-let minus = 5
+let plus = 8
+let minus = 8
 const maxVal = plus + minus
 
 let playStimmungkippt = false
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
-  const ctx = document.getElementById('scale').getContext('2d');
+  const ctx = document.getElementById('scale').getContext('2d')
   const chart = new Chart(ctx, {
     type: 'pie',
     data: {
@@ -107,12 +107,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }]
     },
     options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: false
-          }
-        }]
+      legend: {
+        onClick: null,
+        position: 'bottom',
+        labels: {
+          fontSize: 24
+        }
       }
     }
   })

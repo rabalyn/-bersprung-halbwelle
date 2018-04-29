@@ -5,13 +5,13 @@ const logdebug = debug('socket:debug')
 
 let config = null
 
-let data = {plus: 5, minus: 4, playStimmungkippt: false, playCheer: false}
+let data = {plus: 8, minus: 8, playStimmungkippt: false, playCheer: false}
 
-module.exports.setConfig = function(conf) {
+module.exports.setConfig = (conf) => {
     config = conf
 }
 
-module.exports.socketIO = function hobbitIO(http) {
+module.exports.socketIO = (http) => {
     const io = require('socket.io')(http)
     io.on('connection', (socket) => {
         loginfo('a user connected')
